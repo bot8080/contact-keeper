@@ -1,18 +1,19 @@
 const mongoose = require('mongoose');
-const config =  require('config');
+const config = require('config');
 
 const db = config.get('mongoURI');
 
-const connectDB = async () =>{
+const connectDB = async () => {
 
-    try{
-        await mongoose.connect(db);
-        console.log("Connected");
+    try {
+        await mongoose.connect(db, { dbName: 'ContactKeeper' });
+        console.log("DB Connected");
 
     }
-    catch (err){ 
+    catch (err) {
         console.log(err.message);
-    } 
+    }
 }
+
 
 module.exports = connectDB
