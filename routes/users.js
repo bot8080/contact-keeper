@@ -1,16 +1,14 @@
-// @route   POST /api/users
-// @desc    Resgister a user
-// @access  Public
-
 const express = require("express");
 const router = express.Router();
-const { body, validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const jwt = require('jsonwebtoken');
 const User = require("../models/User");
+const { body, validationResult } = require("express-validator");
 const config = require('config');
 
-
+// @route   POST /api/users
+// @desc    Resgister a user
+// @access  Public
 router.post(
     "/",
     [
@@ -61,7 +59,6 @@ router.post(
         } catch (error) {
             console.log(error)
             res.status(500).send("Server error")
-
         }
     }
 );
