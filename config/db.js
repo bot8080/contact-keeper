@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 const config = require('config');
 
-const db = config.get('mongoURI');
+const dbUrl = config.get('mongoURI');
 
 const connectDB = async () => {
 
     try {
-        await mongoose.connect(db, { dbName: 'ContactKeeper' });
+        await mongoose.connect(dbUrl, { dbName: 'ContactKeeper' });
         console.log("DB Connected");
 
     }

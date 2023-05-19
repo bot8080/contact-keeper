@@ -13,8 +13,8 @@ const auth = require('../middleware/auth');
 
 router.get('/', auth, async (req, res) => {
     try {
-        console.log("here")
-        console.log(req.user.id)
+        // console.log("here")
+        // console.log(req.user.id)
         const user = await User.findById(req.user.id).select('-password'); // in the middleware we added req.user = decoded.user
         res.json(user);
         console.log(user)

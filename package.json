@@ -5,7 +5,10 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "clientinstall": "npm intsall --prefix client",
+    "dev": "concurrently \"npm run server\" \" npm run client \""
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +20,7 @@
     "express-validator": "^6.15.0",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.2",
-    "nodemon": "^2.0.21"
+    "nodemon": "^2.0.21",
+    "prop-types": "^15.8.1"
   }
 }
