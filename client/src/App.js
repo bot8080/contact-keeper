@@ -7,21 +7,21 @@ import About from './components/pages/About';
 import ContactState from './context/contact/contactState'
 
 const App = () => {
-  return (
-    <ContactState>
-      <Router>
-        <Navbar />
-        <>
-          <div className='container'>
-            <Routes>
-              <Route exact path="/" Component={Home} />
-              <Route exact path="/about" Component={About} />
-            </Routes>
-          </div>
-        </>
-      </Router>
-    </ContactState>
-  );
+	return (
+		<ContactState>
+			<Router>
+				<Navbar />
+				<>
+					<div className='container'>
+						<Routes>
+							<Route exact path="/" Component={Home} />
+							<Route exact path="/about" Component={About} />
+						</Routes>
+					</div>
+				</>
+			</Router>
+		</ContactState>
+	);
 }
 
 export default App;
