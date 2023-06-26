@@ -33,11 +33,16 @@ export default (state, action) => {
             };
         case FILTER_CONTACTS:
             return{
-
+                ...state, 
+                filtered: state.contacts.filter(contact => {
+                    const text = action.payload.toLowerCase()
+                    return contact.name.toLowerCase().includes(text) || contact.email.toLowerCase().includes(text)
+                })
             };
         case CLEAR_FILTER:
             return {
-
+                ...state, 
+                filtered: null
             };
         case SET_ALERT:
             return {
