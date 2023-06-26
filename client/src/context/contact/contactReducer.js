@@ -9,7 +9,7 @@ export default (state, action) => {
             return {
                 ...state,
                 contacts: [...state.contacts, action.payload]
-                //  updates the contacts property with a new contacts array that contains all of the existing contacts, the new contact from the payload
+                // The first property ...state creates a shallow copy of the current state object. The second property updates the contacts property of the state object with a new array that contains all of the existing contacts and the new contact from the action payload.
             };
         case DELETE_CONTACT:
             return {
@@ -28,7 +28,8 @@ export default (state, action) => {
             };
         case UPDATE_CONTACT:
             return {
-
+                ...state,
+                contacts: state.contacts.map( contact => contact.id === action.payload.id ? action.payload : contact)  // if id macthes then update action.payload i.e new data otherwise leave as it is
             };
         case FILTER_CONTACTS:
             return{

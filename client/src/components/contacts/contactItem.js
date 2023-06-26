@@ -4,10 +4,9 @@ import { useContext } from 'react';
 
 const ContactItem = (props) => {
     const contactContext = useContext(ContactContext);
-    const {deleteContact, setCurrent, clearCurrent} = contactContext;
+    const {deleteContact, current, setCurrent, clearCurrent} = contactContext;
 
     const { id, name, email, phone, type } = props.contact
-    // const { name, email, phone, type } = props.contact
 
     const onDelete = () => {
         deleteContact(id);
@@ -16,7 +15,6 @@ const ContactItem = (props) => {
 
     const onEdit = (contact) => {
         setCurrent(contact);
-
     }
 
     return (
