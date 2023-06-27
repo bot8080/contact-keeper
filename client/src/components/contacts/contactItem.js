@@ -4,7 +4,7 @@ import { useContext } from 'react';
 
 const ContactItem = (props) => {
     const contactContext = useContext(ContactContext);
-    const {deleteContact, current, setCurrent, clearCurrent} = contactContext;
+    const {deleteContact, setCurrent, clearCurrent} = contactContext;
 
     const { id, name, email, phone, type } = props.contact
 
